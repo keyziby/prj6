@@ -1,6 +1,6 @@
 from django.urls import path
-from catalog.views import index
-
+from catalog.templates.catalog import index_home, index_contacts
 urlpatterns = [
-    path('', index),
+    path('catalog/', index_contacts),
+    path('', index_home)
 ]
