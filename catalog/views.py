@@ -1,11 +1,14 @@
 from django.shortcuts import render
 
 
-def index(request):
-    if request.method == 'POST':
+def index_contacts(request):
+    if request.method == "POST":
         name = request.POST.get('name')
-        email = request.POST.get('email')
+        phone = request.POST.get('phone')
         message = request.POST.get('message')
-        print(f'{name} ({email}): {message}')
-    return render(request, 'catalog/index_contact.html')
-# Create your views here.
+        print(f'{name} ({phone}): {message}')
+    return render(request, 'catalog/index_contacts.html')
+
+
+def index_home(request):
+    return render(request, 'catalog/index_home.html')
